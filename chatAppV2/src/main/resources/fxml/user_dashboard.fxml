@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.UserDashboardController">
+
+  <children>
+    <!-- SplitPane divides left (chat list) and center (chat panel) -->
+    <SplitPane dividerPositions="0.25" orientation="HORIZONTAL" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="60.0">
+      <!-- LEFT: Chat List Panel -->
+      <VBox spacing="10.0">
+        <padding>
+          <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <children>
+          <Label text="Available Chats" />
+          <ListView fx:id="chatListView" prefWidth="200.0" />
+          <HBox spacing="10.0">
+            <children>
+              <Button onAction="#handleSubscribe" text="Subscribe" />
+              <Button onAction="#handleUnsubscribe" text="Unsubscribe" />
+            </children>
+          </HBox>
+        </children>
+      </VBox>
+
+      <!-- CENTER: Chat Panel -->
+      <VBox spacing="10.0">
+        <padding>
+          <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+        <children>
+          <Label text="Chat Panel" />
+          <TextArea fx:id="chatArea" editable="false" prefHeight="400.0" wrapText="true" />
+          <HBox spacing="10.0">
+            <children>
+              <TextField fx:id="messageField">
+                <HBox.hgrow>
+                   <!-- Correct way to set Priority -->
+                </HBox.hgrow>
+              </TextField>
+              <Button onAction="#handleSend" text="Send" />
+            </children>
+          </HBox>
+        </children>
+      </VBox>
+    </SplitPane>
+
+    <!-- TOP: Profile Panel -->
+    <HBox alignment="CENTER_RIGHT" spacing="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <padding>
+        <Insets bottom="10" left="10" right="10" top="10" />
+      </padding>
+      <children>
+        <Button onAction="#handleUpdateProfile" text="Edit Profile" />
+      </children>
+    </HBox>
+  </children>
+</AnchorPane>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="view.AdminDashboardController">
+
+    <!-- TOP: Create Chat -->
+    <top>
+        <HBox spacing="10.0" >
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <TextField fx:id="chatNameField" promptText="Enter new chat name" HBox.hgrow="ALWAYS"/>
+            <Button text="Create Chat" onAction="#handleCreateChat"/>
+        </HBox>
+    </top>
+
+    <!-- LEFT: Chat List -->
+    <left>
+        <VBox spacing="10.0" >
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Chats"/>
+            <ListView fx:id="chatListView" prefWidth="200"/>
+            <Button text="View Subscribers" onAction="#handleViewSubscribers"/>
+        </VBox>
+    </left>
+
+    <!-- CENTER: User List -->
+    <center>
+        <VBox spacing="10.0" >
+            <padding>
+                <Insets bottom="10" left="10" right="10" top="10" />
+            </padding>
+            <Label text="Users"/>
+            <ListView fx:id="userListView"/>
+            <HBox spacing="10">
+                <Button text="Subscribe User" onAction="#handleSubscribeUser"/>
+                <Button text="Unsubscribe User" onAction="#handleUnsubscribeUser"/>
+                <Button text="Remove User" onAction="#handleRemoveUser"/>
+            </HBox>
+        </VBox>
+    </center>
+
+    <!-- BOTTOM: Status -->
+    <bottom>
+
+        <Label fx:id="statusLabel" />
+
+    </bottom>
+
+</BorderPane>

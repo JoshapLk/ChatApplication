@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="190.0" prefWidth="277.0" spacing="10" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginController">
+    <Label text="Login" />
+    <TextField fx:id="emailField" promptText="Email" />
+    <PasswordField fx:id="passwordField" promptText="Password">
+      <opaqueInsets>
+         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+      </opaqueInsets></PasswordField>
+    <Button onAction="#handleLogin" text="Login" />
+    <Button onAction="#switchToRegister" text="Register" />
+    <Label fx:id="statusLabel" textFill="red" />
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>
